@@ -1,3 +1,9 @@
-# Desafio Docker - FullCycle
+# Docker Challenge - FullCycle
 
-## Imagem GO Lang no Docker Hub
+## GO Lang Image in Docker Hub
+
+- To run the image you must execute the command below:
+
+```
+docker run -t indeximer/golang:fullcycle
+```
