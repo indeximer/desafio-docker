@@ -1,9 +1,14 @@
-FROM golang:1.19.4
+FROM golang:alpine AS build
 
-WORKDIR /usr/src/app
+WORKDIR /app
 
 COPY /src ./
-RUN go mod download && go mod verify
 
-COPY . .
-RUN go run .
+RUN go build -o /app/build .
+
+
+FROM scratch
+
+COPY --from=build /app/build ./hello
+
+ENTRYPOINT ["./hello"]
