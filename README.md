@@ -7,5 +7,3 @@
 ```
 docker run -t indeximer/golang:fullcycle
 ```
-
-teste
