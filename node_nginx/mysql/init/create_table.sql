@@ -1,0 +1,1 @@
+CREATE TABLE IF NOT EXISTS people (name varchar(100) NOT NULL);
