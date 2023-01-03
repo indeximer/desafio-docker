@@ -7,3 +7,9 @@
 ```
 docker run -t indeximer/golang:fullcycle
 ```
+
+## Node App with Mysql database and Nginx
+
+```
+docker-compose up -d
+```
