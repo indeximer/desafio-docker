@@ -19,15 +19,12 @@ app.get("/", (req, res) => {
   const sqlSelect = "SELECT name FROM people";
   connection.query(sqlSelect, (err, result) => {
     connection.end();
-    console.log("##### RESULT: ", result);
 
     let personsList = "";
 
     for (const person of result) {
       personsList += `<li>${person.name}</li>`;
     }
-
-    console.log("#### PERSONS: ", personsList);
 
     const content = `
       <h1>FullCycle ROCKS!!</h1>

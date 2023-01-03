@@ -8,8 +8,6 @@ services:
     tty: true
     networks:
       - nodenetwork
-    ports:
-      - "3000:3000"
     depends_on:
       - db
 
@@ -24,6 +22,18 @@ services:
     environment:
       - MYSQL_DATABASE=nodedb
       - MYSQL_ROOT_PASSWORD=root
+    networks:
+      - nodenetwork
+
+  nginx:
+    build:
+      context: ./nginx
+    container_name: nginx
+    restart: always
+    ports:
+      - "8080:80"
+    depends_on:
+      - node
     networks:
       - nodenetwork
 
